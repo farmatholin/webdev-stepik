@@ -6,5 +6,5 @@ def application(env, start_response):
 
     body = text.encode("utf-8")
 
-    start_response('200 OK', [('Content-Type', 'text/html')])
+    start_response('200 OK', [('Content-Type', 'text/plain')])
     return [body]
