@@ -10,6 +10,7 @@ class Question(models.Model):
     rating = models.IntegerField(default=0)
     author = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     likes = models.ManyToManyField(User, related_name="q_to_likes")
+    object = QuestionManager()
 
     def __str__(self):
         return self.title
@@ -26,3 +27,11 @@ class Answer(models.Model):
 
     def __str__(self):
         return self.text
+
+
+class QuestionManager(models.Manager):
+    def new(self):
+        pass
+
+    def popular(self):
+        pass
